@@ -43,7 +43,6 @@ module GitHub
 
         @joined = DateTime.parse( data['created_at'] )
         @url    = data[ 'url' ]
-        #puts data.to_yaml
       end 
     end
 
@@ -51,8 +50,6 @@ module GitHub
       return @repo_list if @repo_list
 
       gh_repos = GitHub.get_user_repos(uname)
-
-      puts gh_repos.to_yaml
 
       @repo_list = gh_repos.map { |r| RepoInfo.new(r) } 
     end
@@ -74,10 +71,6 @@ module GitHub
       @language_stats.sort! { |a, b| b[:repos].count <=> a[:repos].count }
 
       @language_stats
-    end
-
-    def self.does_not_exist
-      new :does_not_exist
     end
   end
   
