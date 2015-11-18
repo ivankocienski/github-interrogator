@@ -18,7 +18,7 @@
 
         %h2 #{ls[:name]} <small>#{ls[:repos].count} repos</small>
 
-        %ul#repo-info
+        %ul.repo-info
           - ls[:repos].each do |repo|
             %li= link_to repo.name, repo.url
 
