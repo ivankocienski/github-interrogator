@@ -11,10 +11,10 @@ module GitHub
     attr_reader :url
     
     def initialize( from )
-      @name     = from['name']
-      @created  = DateTime.parse( from['created_at'] )
-      @language = from['language']
-      @url      = from['html_url']      
+      @name     = from['name'] || ''
+      @created  = DateTime.parse( from['created_at'] || '' )
+      @language = from['language'] || ''
+      @url      = from['html_url'] || ''
     end
 
     def <=>(o)
@@ -41,8 +41,8 @@ module GitHub
 
         data = JSON.parse( from_json ) 
 
-        @joined = DateTime.parse( data['created_at'] )
-        @url    = data[ 'url' ]
+        @joined = DateTime.parse( data['created_at'] ) if data.has_key?( 'created_at' )
+        @url    = data[ 'url' ] || ''
       end 
     end
 
