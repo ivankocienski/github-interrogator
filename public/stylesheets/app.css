@@ -1,0 +1,21 @@
+
+footer p {
+  font-size: 0.9em;
+  margin: 2em 0px;
+  text-align: center;
+  color: #777;
+}
+
+#username-entry-box {
+  border: 1px solid #ccc;
+  padding: 2em;
+  margin-top: 1em;
+}
+
+ul#repo-info {
+  margin-bottom: 3em;
+}
+
+
+
+  
