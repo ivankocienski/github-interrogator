@@ -101,7 +101,10 @@ module GitHub
   def get(path)
     url = "#{BASE_URL}#{path}"
     Rails.logger.info "github: GET #{url}"
-    open( url ).read
+    out = open( url ).read
+    #puts out
+
+    out
   end
 
 end
